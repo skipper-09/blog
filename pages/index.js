@@ -13,7 +13,7 @@ export default function Home({ data }) {
     </div>
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     "https://newsapi.org/v2/top-headlines?country=id&apiKey=6c7c7bf3c51349ff9409cc02617757be"
   );
