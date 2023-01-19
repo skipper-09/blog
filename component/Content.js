@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Moment from "react-moment";
 export default function articel({ articles }) {
   return (
     <div className="container">
@@ -12,14 +13,16 @@ export default function articel({ articles }) {
               <h5 className="card-title fs-4 text-capitalize fw-bold">
                 {articles.title}
               </h5>
-              <p className="card-text">{articles.author}</p>
+              <p className="card-text text-author ">{articles.author}</p>
 
               <p>{articles.content}</p>
 
               <p className="card-text">
                 <small className="text-muted">
                   <i className="bi-clock"> </i>
-                  {articles.publishedAt}
+                  <Moment format="YYYY-MM-DD">
+                    {articles.publishedAt}
+                  </Moment>
                 </small>
               </p>
             </div>
